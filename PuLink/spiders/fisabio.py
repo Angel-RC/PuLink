@@ -48,7 +48,7 @@ class spider_fisabio(CrawlSpider):
             oferta['start_date'] = " - "
             oferta['entidad']    = self.entidad
             oferta['ciudad']     = empleo_item.xpath("td//tr/td[9]/text()").get()
-            oferta['titulo']     = empleo_item.xpath("td//tr/td[5]/a/text()").get()
+            oferta['titulo']     = empleo_item.xpath("td//tr/td[5]/a/text()").get().replace("\n", '').replace("\r", '')
             oferta['referencia'] = empleo_item.xpath("td//tr/td[3]/text()").get()
             oferta['url']        = empleo_item.xpath("td//tr/td[5]/a/@href").get()
             oferta['deadline']   = empleo_item.xpath("td//tr/td[7]/text()").get()

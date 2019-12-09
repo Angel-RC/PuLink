@@ -44,7 +44,7 @@ class spider_la_fe(CrawlSpider):
             oferta['start_date'] = empleo_item.xpath("time/text()").get()
             oferta['entidad']    = self.entidad
             oferta['ciudad']     = self.ciudad
-            oferta['titulo']     = empleo_item.xpath("h2/a/text()").get()
+            oferta['titulo']     = empleo_item.xpath("h2/a/text()").get().replace("\n", '').replace("\r", '')
             oferta['referencia'] = empleo_item.xpath("dl/dd[1]/text()").get()
             oferta['url']        = self.url_site + empleo_item.xpath("h2/a/@href").get()
             oferta['deadline']   = empleo_item.xpath("dl/dd[3]/text()").get()

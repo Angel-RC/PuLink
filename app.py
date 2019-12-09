@@ -11,6 +11,7 @@ st.markdown("Esta aplicación permite ver las ofertas de empleo, becas y ayudas 
 
 
 
+
 @st.cache
 def scrapear():
     os.system("python PuLink/spiders/fisabio.py")
@@ -62,13 +63,17 @@ ciudad = st.sidebar.selectbox(
 entidades = st.sidebar.multiselect(
  'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe"])
 
-vista = st.sidebar.radio("Vista:", ["Compacta","Ligera"])
+interes = st.sidebar.text_input('Buscar cargo:')
+
+vista = st.sidebar.radio("Vista:", ["Ligera", "Compacta"])
 
 # -------------------------------------------------------------------------
 
 filtered_ofertas = ofertas[(ofertas['ciudad'] == ciudad)]
 if (entidades):
-    filtered_ofertas = filtered_ofertas[(ofertas['entidad'].isin(entidades))]
+    filtered_ofertas = filtered_ofertas[filtered_ofertas['entidad'].isin(entidades)]
+if (interes):
+    filtered_ofertas = filtered_ofertas[filtered_ofertas['titulo'].str.lower().str.contains(interes.lower())]
 
 
 mostrar_datos(filtered_ofertas, vista)

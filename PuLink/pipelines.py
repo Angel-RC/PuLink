@@ -9,8 +9,3 @@ from scrapy import signals
 class ItemPipeline(object):
     def process_item(self, item, spider):
         return item
-from scrapy import signals
-import os
-from scrapy.contrib.exporter import CsvItemExporter
-from scrapy.exporters import JsonItemExporter
-

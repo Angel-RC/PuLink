@@ -40,7 +40,7 @@ class spider_incliva(CrawlSpider):
             oferta['start_date'] = empleo_item.xpath("td[3]/text()").get()
             oferta['entidad']    = self.entidad
             oferta['ciudad']     = self.ciudad
-            oferta['titulo']     = empleo_item.xpath("td[1]/text()").get()
+            oferta['titulo']     = empleo_item.xpath("td[1]/text()").get().replace("\n", '').replace("\r", '')
             oferta['referencia'] = empleo_item.xpath("td[2]/text()").get()
             oferta['url']        = self.url_site + empleo_item.xpath("td[6]/a/@href").get()
             oferta['deadline']   = empleo_item.xpath("td[4]/text()").get()
