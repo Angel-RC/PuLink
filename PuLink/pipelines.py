@@ -9,3 +9,4 @@ from scrapy import signals
 class ItemPipeline(object):
     def process_item(self, item, spider):
         return item
+
