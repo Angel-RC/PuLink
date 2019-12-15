@@ -17,6 +17,8 @@ def scrapear():
     os.system("python PuLink/spiders/fisabio.py")
     os.system("python PuLink/spiders/incliva.py")
     os.system("python PuLink/spiders/la_fe.py")
+    os.system("python PuLink/spiders/manises.py")
+
 
 @st.cache
 def leer_datos():
@@ -28,7 +30,7 @@ def leer_datos():
         datos = pd.read_csv(filename, index_col=None, header=0)
         lista_trabajos.append(datos)
 
-    ofertas = pd.concat(lista_trabajos, axis=0, ignore_index=True)
+    ofertas = pd.concat(lista_trabajos, axis=0, ignore_index=True,sort = False)
     ofertas.reset_index(drop=True)
 
     return(ofertas)
@@ -61,7 +63,7 @@ ciudad = st.sidebar.selectbox(
  'Ciudad:', ofertas['ciudad'].unique())
 
 entidades = st.sidebar.multiselect(
- 'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe"])
+ 'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe", "Hospital Sanitas"])
 
 interes = st.sidebar.text_input('Buscar cargo:')
 

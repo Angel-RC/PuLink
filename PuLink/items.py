@@ -19,3 +19,14 @@ class PulinkItem(scrapy.Item):
     referencia = scrapy.Field()
     url = scrapy.Field()
 
+class manisesItem(scrapy.Item):
+    # define the fields for your item here like:
+    start_date = scrapy.Field()
+    entidad = scrapy.Field()
+    ciudad = scrapy.Field()
+    titulo = scrapy.Field()
+    deadline = scrapy.Field()
+    referencia = scrapy.Field()
+    url = scrapy.Field()
+    provincia = scrapy.Field()
+    unidad_negocio = scrapy.Field()
