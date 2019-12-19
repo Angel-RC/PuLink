@@ -17,7 +17,9 @@ def scrapear():
     os.system("python PuLink/spiders/fisabio.py")
     os.system("python PuLink/spiders/incliva.py")
     os.system("python PuLink/spiders/la_fe.py")
-   # os.system("python PuLink/spiders/manises.py")
+
+
+# os.system("python PuLink/spiders/manises.py")
 
 
 @st.cache

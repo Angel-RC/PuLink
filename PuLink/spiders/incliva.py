@@ -1,6 +1,7 @@
 import sys
-sys.path.append('C:/Users/Chicote/Desktop/proyectos/PuLink/Pulink')
-from items import PulinkItem
+#sys.path.append('C:/Users/Chicote/Desktop/proyectos/PuLink/Pulink')
+#from items import PulinkItem
+
 
 import scrapy
 from scrapy.spiders import CrawlSpider, Rule
@@ -10,6 +11,15 @@ from scrapy.exceptions import CloseSpider
 import datetime
 from scrapy.crawler import CrawlerProcess
 
+class PulinkItem(scrapy.Item):
+    # define the fields for your item here like:
+    start_date = scrapy.Field()
+    entidad = scrapy.Field()
+    ciudad = scrapy.Field()
+    titulo = scrapy.Field()
+    deadline = scrapy.Field()
+    referencia = scrapy.Field()
+    url = scrapy.Field()
 
 class spider_incliva(CrawlSpider):
     name           = 'spider_incliva'
