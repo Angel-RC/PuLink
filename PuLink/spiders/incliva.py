@@ -1,5 +1,5 @@
 import sys
-sys.path.append('C:/Users/Chicote/Desktop/PuLink/PuLink')
+sys.path.append('C:/Users/Chicote/Desktop/proyectos/PuLink/Pulink')
 from items import PulinkItem
 
 import scrapy

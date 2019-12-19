@@ -5,9 +5,9 @@ import glob
 
 st.markdown("# PuLink (Versión 1.0)")
 st.markdown("## Una especie de Linkedin para sitios publicos")
-st.markdown("Esta aplicación permite ver las ofertas de empleo, becas y ayudas de las entidades públicas."
-            "Recogiendo todas las ofertas en un mismo sitio no será necesario buscar en cada una de dichas páginas."
-            "Sugerencias porfa? :)")
+st.markdown("Esta aplicación permite ver las ofertas de empleo de las entidades públicas."
+            "Recogiendo todas las ofertas en un mismo sitio no será necesario buscar en cada una de dichas páginas.")
+st.markdown("De momento están recogidas INCLIVA, FISABIO y La Fé")
 
 
 
@@ -17,7 +17,7 @@ def scrapear():
     os.system("python PuLink/spiders/fisabio.py")
     os.system("python PuLink/spiders/incliva.py")
     os.system("python PuLink/spiders/la_fe.py")
-    os.system("python PuLink/spiders/manises.py")
+   # os.system("python PuLink/spiders/manises.py")
 
 
 @st.cache
@@ -63,7 +63,7 @@ ciudad = st.sidebar.selectbox(
  'Ciudad:', ofertas['ciudad'].unique())
 
 entidades = st.sidebar.multiselect(
- 'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe", "Hospital Sanitas"])
+ 'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe"])
 
 interes = st.sidebar.text_input('Buscar cargo:')
 
