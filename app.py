@@ -67,7 +67,7 @@ ciudad = st.sidebar.selectbox(
  'Ciudad:', ofertas['ciudad'].unique())
 
 entidades = st.sidebar.multiselect(
- 'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe", "Manises"])
+ 'Entidades disponibles:', ["FISABIO", "INCLIVA", "La Fe", "Hospital Sanitas"])
 
 interes = st.sidebar.text_input('Buscar cargo:')
 
